@@ -1,0 +1,16 @@
+{
+    "data": [
+        {
+            "name": "Alicante",
+            "image": "advance-card-map-madison.png"
+        },
+        {
+            "name": "Valencia",
+            "image": "advance-card-map-mario.png"
+        },
+        {
+            "name": "Castellon",
+            "image": "advance-card-map-paris.png"
+        }
+    ]
+}
