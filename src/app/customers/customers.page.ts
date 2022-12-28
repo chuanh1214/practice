@@ -12,6 +12,8 @@ import { map } from 'rxjs/operators';
 export class CustomersPage implements OnInit {
 
 users:any = [];
+searchUser:any;
+
 permission:boolean =true;
   constructor(
     private router: Router,
@@ -22,7 +24,8 @@ permission:boolean =true;
     this.getUsers().subscribe(res=>{
       console.log("Res",res)
       this.users = res;
-    })
+    });
+    this.searchUser = this.users;
   }
 
   goToHome(){
@@ -36,6 +39,16 @@ permission:boolean =true;
         return res.data;
       })
     )
+  }
+
+  searchCustomer(event:any){
+    const text = event.target.value;
+    this.searchUser = this.users;
+    if(text && text.trim() != ''){
+      this.searchUser = this.searchUser.filter((user:any)=>{
+        return (user.name.toLowerCase().indexOf(text.toLowerCase())>-1);
+      })
+    }
   }
 
 }

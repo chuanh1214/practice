@@ -23,9 +23,9 @@ export class CitiesPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getCities().subscribe(re=>{
-      console.log("Re",re)
-      this.cities = re;
+    this.getCities().subscribe(res=>{
+      console.log("Res",res)
+      this.cities = res;
     })
   }
 
@@ -38,8 +38,8 @@ export class CitiesPage implements OnInit {
   getCities(){
     return this.http.get('assets/files/cities.json')
     .pipe(
-      map((re:any)=>{
-        return re.data;
+      map((res:any)=>{
+        return res.data;
       })
     )
   }
@@ -48,7 +48,7 @@ export class CitiesPage implements OnInit {
   async presentToast(){
     const toast = await this.toastController.create({
       message: 'selected city',
-      duration: 2000,
+      duration: 1000,
       position: "top"
     });
     toast.present();

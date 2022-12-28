@@ -2,11 +2,15 @@
   <ion-toolbar color="mycolor">
     <ion-title color="light">customers</ion-title>
   </ion-toolbar>
+
+  <ion-toolbar style="margin-top: 15px;">
+    <ion-searchbar placeholder="Search" animated (ionChange)="searchCustomer($event)"></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content class="list-avatar-page">
+<ion-content>
   <ion-list *ngIf="permission">
-    <ion-item *ngFor="let user of users">
+    <ion-item *ngFor="let user of searchUser">
       <ion-avatar slot="start" class="avatar">
         <img src="assets/img/{{user.image}}">
       </ion-avatar>
