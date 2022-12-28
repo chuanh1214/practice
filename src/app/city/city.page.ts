@@ -36,7 +36,6 @@ export class CityPage implements OnInit {
       this.image = this.cities[this.finalId].image;
       this.desc = this.cities[this.finalId].desc;
     })
-
   }
 
   getCities(){

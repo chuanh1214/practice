@@ -12,6 +12,7 @@ import { AlertController, ToastController } from '@ionic/angular';
 })
 export class CitiesPage implements OnInit {
 
+  token = localStorage.getItem("token");
   cities:any = [];
 
   //xây dựng function
@@ -23,6 +24,9 @@ export class CitiesPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log("token: ", this.token)
+    // localStorage.removeItem('token');
+    localStorage.clear();
     this.getCities().subscribe(res=>{
       console.log("Res",res)
       this.cities = res;
