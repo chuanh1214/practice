@@ -51,4 +51,13 @@ permission:boolean =true;
     }
   }
 
+  handleRefresh(event:any){
+    this.getUsers();
+    console.log("Begin async operation");
+
+    setTimeout(()=>{
+      event.target.complete();
+    },2000);
+  }
+
 }
