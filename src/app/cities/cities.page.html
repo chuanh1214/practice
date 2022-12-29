@@ -9,7 +9,7 @@
   <ion-row>
     <ion-col sizeLg="6" sizeMd="6" sizeXs="12" *ngFor="let city of cities">
       <ion-card [routerLink]="['/city',city.id]">
-        <img src="assets//image/{{city.image}}">
+        <img src="assets/image/{{city.image}}">
         <div class="card-title">{{city.name}}</div>
       </ion-card>
     </ion-col>

@@ -9,6 +9,14 @@
 </ion-header>
 
 <ion-content>
+
+    <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+      <ion-refresher-content 
+      refreshingSpinner="circles">
+      </ion-refresher-content>
+    </ion-refresher>
+
+
   <ion-list *ngIf="permission">
     <ion-item *ngFor="let user of searchUser">
       <ion-avatar slot="start" class="avatar">
