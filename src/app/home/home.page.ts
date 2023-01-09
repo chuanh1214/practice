@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
+import { ActionSheetController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -9,23 +10,47 @@ import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 })
 export class HomePage implements OnInit {
 
-  code: any;
-
+  result: string;
   constructor(
     private barcodeScanner: BarcodeScanner,
+    private actionSheetCtrl: ActionSheetController
   ) { }
 
   ngOnInit() {
 
   }
 
-  scan(){
-    this.barcodeScanner.scan().then(barcodeData=>{
-      this.code = barcodeData.text;
-      console.log('barcode data',this.code);
-    }).catch(err=>{
-      console.log('Error',err);
+  async presentActionSheet(){
+    const actionSheet = await this.actionSheetCtrl.create({
+      header: 'Home header',
+      subHeader: 'Home subHeader',
+      buttons: [
+        {
+          text: 'Delete',
+          role: 'delete',
+          data: {
+            action: 'delete',
+          },
+        },
+        {
+          text: 'Share',
+          data: {
+            action: 'share',
+          },
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          data: {
+            action: 'cancel',
+          },
+        },
+      ],
     });
+    await actionSheet.present();
+
+    const res = await actionSheet.onDidDismiss();
+    this.result = JSON.stringify(res,null,2);
   }
 
 }

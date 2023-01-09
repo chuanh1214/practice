@@ -5,6 +5,9 @@
 </ion-header>
 
 <ion-content >
-  <ion-button (click)="scan()">code scanner</ion-button>
-  {{code}}
+  <div class="container">
+    <ion-button (click)="presentActionSheet()">Open</ion-button>
+    <code *ngIf="result"><br>{{result}}</code>
+  </div>
 </ion-content>
+
