@@ -1,6 +1,44 @@
-
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot='start'>
+      <ion-back-button text='' defaultHref='' onclick="history.back()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
-  <ion-input type="text" placeholder="Email"></ion-input>
-  <ion-input type="password" placeholder="Password"></ion-input>
-  <ion-button color="primary" (click)="login()">Login</ion-button>
+  <section style = 'padding: 10px'>
+    <form style = "padding-top: 10px;">
+      <div class="mb-6">
+        <ion-row>
+          <ion-col class ="input-pass">
+            <input type="text" class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0"
+              placeholder = "Email" />
+            <span class="icon-pass">
+              <ion-icon class="eye"></ion-icon>
+            </span>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div class="mb-6">
+        <ion-row>
+          <ion-col class = "input-pass">
+            <input type="password" class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0"
+             placeholder="Password"/>
+            <span class="icon-pass">
+              <ion-icon class="eye"></ion-icon>
+            </span>
+          </ion-col>
+        </ion-row>
+      </div>
+
+
+      <ion-button (click)="login()" color="primary" class="submit-btn" type="submit" expand="block">Login</ion-button>
+    </form>
+  </section>
+ 
 </ion-content>
+<!-- <ion-input type="text" placeholder="Email"></ion-input>
+<ion-input type="password" placeholder="Password"></ion-input>
+<ion-button color="primary" (click)="login()">Login</ion-button> -->

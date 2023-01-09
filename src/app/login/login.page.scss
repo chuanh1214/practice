@@ -1,0 +1,36 @@
+.eye{
+    float: right;
+    padding-top: 10px;
+    outline: none;
+  }
+
+  .inputtags{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+  
+  input.inputtags:focus{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+  
+  form{
+    border: 1px solid black;
+    box-shadow: 0 0 0 0.2;
+  }
+
+  .form-control:focus {
+     box-shadow: 0 0 0 0px #239b02;
+  }
+  .mb-6{
+    .input-pass{
+      position: relative;
+    }
+    .icon-pass{
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+  }
