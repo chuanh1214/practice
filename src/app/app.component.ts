@@ -11,6 +11,7 @@ export class AppComponent {
     { title: 'Customers', url: '/customers', icon: 'people'},
     { title: 'Cities', url: '/cities', icon: 'location'},
     { title: 'Login', url: '/login', icon: 'log-in'},
+    { title: 'Toggle', url: '/toggle', icon: 'arrow-forward'},
   ];
   public labels = [];
   constructor() {}
